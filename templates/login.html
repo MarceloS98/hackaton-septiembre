@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title> Artesania ::Instituto Paraguayo de Artesania</title>
+    </head>
+    <body class="bg-gray-50 grid grid-cols-2 min-h-screen min-w-full">
+        <div>
+            <img src="/static/arte_madera.jpg" class="min-h-full min-w-full">
+        </div> 
+        <div class="grid grid-rows-6 max-h-screen">
+            <div class="row-start-1 grid grid-cols-2">
+                <img src="/static/logo_ipa.png" width="186px" height="141px"/>
+                <img src="/static/paraguay_gente.png" width="300px" height="180px" class=" justify-self-end mt-10" >
+            </div>
+            <div class="row-start-2 grid grid-cols-1">
+        
+                <img src="/static/gobierno_logo.png" width="400px" height="98px" class="justify-self-center">
+            </div>
+            <div class="row-start-3 row-span-4 grid grid-cols-1"> 
+                <form class="justify-self-center mt-16 grid grid-rows-6 border-4 border-red-500 rounded w-3/4 h-96" method="post">
+                    <div class="row-start-1 bg-red-500"></div>
+                    <div class="row-start-2 grid grid-cols-3 items-center justify-items-start ">
+                        <p class="justify-self-end mr-3 font-bold">Nombre de usuario:</p>
+                        <input type="text" name="username" class="border-2 border-gray-600 col-span-2 w-11/12 h-[30px] rounded " />
+                    </div>
+                    <div class="row-start-3 grid grid-cols-3 items-center justify-items-start ">
+                        <p class="justify-self-end mr-3 font-bold">Numero de patronal:</p>
+                        <input type="text" name="patronal" class="border-2 border-gray-600 col-span-2 w-11/12 h-[30px] rounded " />
+                    </div>
+                    <div class="row-start-4 grid grid-cols-3 items-center justify-items-start ">
+                        <p class="justify-self-end mr-3 font-bold">Contraseña:</p>
+                        <input type="password" name="contrasenha" class="border-2 border-gray-600 col-span-2 w-11/12 h-[30px] rounded" />
+                    </div>
+                    <div class="row-start-5 grid grid-cols-4">
+                        <div class="col-start-2 col-span-2 grid grid-cols-3 items-center">
+                            <input type="checkbox" name="check" class="justify-self-end mr-3" />
+                            <p class="font-bold"> Recordarme</p>
+                            <button value="Aceptar" type="submit" class="bg-red-500 rounded text-white">Aceptar</button>
+                        </div>
+                    </div>
+                    <div class="row-start-6 grid grid-cols-3">
+                        <a href="#" class="font-bold justify-self-center col-start-2">Olvide mi Contraseña</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>

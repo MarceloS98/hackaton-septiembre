@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> Artesania ::Instituto Paraguayo de Artesania</title>
+</head>
+<body class="min-h-screen min-w-full bg-yellow-100">
+    <div>
+        <div class="flex-none gap-2"></div>
+        <div class="w-full fixed z-30 ">
+            <div class="navbar bg-base-100 bg-red-500 flex justify-between px-12 ">
+                <div class="flex items-center gap-4">
+                    <a href="{{url_for('home')}}" class="font-sans text-3xl text-white font-bold">IPA</a>
+                    <select class=" bg-red-500 py-1 px-3 text-white rounded-full  hover:bg-red-600" name="select">
+                        <option value="value1">Español</option>
+                        <option value="value3">Guarani</option>
+                        <option value="value3">Ingles</option>
+                    </select>
+                </div>
+                <div class="flex-none gap-2">
+                  <div class="form-control">
+                    <input type="text" placeholder="Busqueda" class="input input-bordered bg-gray-50" />
+                  </div>
+                  <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                      <div class="w-10 rounded-full">
+                        <img src="https://placeimg.com/80/80/people" />
+                      </div>
+                    </label>
+                    <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content rounded-box bg-gray-100 w-52">
+                        <li>
+                        <a class="justify-between">
+                          Perfil
+                        </a>
+                        </li>
+                        <li><a>Configuración</a></li>
+                        <li><a>Cerrar sesión</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="min-h-screen min-w-full row-start-2 row-span-3 grid grid-rows-2 pt-20">
+        <div class="grid grid-cols-3">
+            <div class="col-start-1 col-span-2 m-4">
+              <h2 class=" text-center text-black text-4xl font-bold">¿Que es la artesania?</h2> <br> <br> <br> <br>
+                <h3 class="text-center text-black text-xl">El término "artesanía popular" se refiere al conjunto de manifestaciones producidas 
+                    como exponentes de su cultura por diferentes pueblos (comunidades, sectores 
+                    sociales, minorías, etc.). Esto significa que la artesanía popular mantiene lazos 
+                    profundos con la tradición e implica siempre un cierto elemento de identificación 
+                    comunitaria (en principio, la comunidad se reconoce a través de su práctica artesanal).
+                     Ahora bien, no todas las manifestaciones artesanales alcanzan a ser artísticas. Según 
+                    este criterio, estamos manejando una distinción entre el concepto global de "artesanía 
+                    popular "y el más restringido de "arte popular". El primero se refiere genéricamente a 
+                    productos tradicionales realizados manualmente y a partir de un determinado nivel de 
+                    destreza, ingenio y habilidad. Mientras que el término "arte popular" se aplica sólo a las 
+                    artesanías que alcanzan determinados niveles de expresividad estética. Definimos acá 
+                    a la expresividad estética como determinada por la calidad de las formas, el ajuste de las 
+                    técnicas y materiales y la densidad de los contenidos.
+                    La artesanía paraguaya es conocida y apreciada en todo el mundo. Es un patrimonio cultural de nuestra nación.
+                     Ella encarna la riqueza folklórica de nuestro país, representando en las diversas obras el conocimiento de innumerables
+                      generaciones de artesanos paraguayos, con características especiales que singularizan a cada pueblo.
+                    Muchas de las tradiciones paraguayas se remontan a la presencia de misioneros jesuitas y franciscanos, en los siglos XVII y XVIII, la diversidad de cultura permite un desarrollo constante y expansivo de la artesanía.
+                    
+                    </h3>
+            </div>
+            <div class="">
+                <img src="/static/map1.png">
+            </div>
+        </div>
+        <div class="grid grid-cols-3 ">
+            <div class="col-start-1 col-span-2">
+                <h3 class="text-center text-black text-4xl font-bold">Tipos de Artesanias</h3> <br>
+                <p class="text-center text-black text-xl">Ñanduti , Ao poí , Encaje yú , Filigrana , Karanday , Tallado de madera
+                    Ceramica , Hamaca , Indigena , Cuero. 
+                    </p> <br>
+                    <img src="/static/pruebaarte.PNG">
+            </div>
+            <div class="col-start-3">
+                <img src="/static/artesanias.png">
+            </div>
+        </div>
+</body> 
+
+</html>

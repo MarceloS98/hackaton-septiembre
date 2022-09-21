@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Piloto maquetacion</title>
+
+
+</head>
+<body class=" font-serif bg-gray-50">
+    <div class="w-full fixed z-30 ">
+        <div class="navbar bg-base-100 bg-red-500 flex justify-between px-12 ">
+            <div class="flex items-center gap-4">
+                <span class="font-sans text-3xl text-white font-bold">IPA</span>
+                <select class=" bg-red-500 py-1 px-3 text-white rounded-full  hover:bg-red-600" name="select">
+                    <option value="value1">Español</option>
+                    <option value="value3">Guarani</option>
+                    <option value="value3">Ingles</option>
+                </select>
+            </div>
+            <div class="flex-none gap-2">
+              <div class="form-control">
+                <input type="text" placeholder="Busqueda" class="input input-bordered bg-gray-50" />
+              </div>
+              <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                  <div class="w-10 rounded-full">
+                    <img src="https://placeimg.com/80/80/people" />
+                  </div>
+                </label>
+                <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content rounded-box bg-gray-100 w-52">
+                  <li>
+                    <a class="justify-between">
+                      Perfil
+                    </a>
+                  </li>
+                  <li><a>Configuración</a></li>
+                  <li><a>Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+            <div class="bg-white text-red-500 flex py-3 items-center gap-4 px-12 shadow-md">
+                <span class="font-bold">
+                    Cursos mas buscados:
+                </span>
+                <span class="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-red-500">#filigrana</span>
+                <span class="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-red-500">#Ñanduti</span>
+                <span class="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-red-500">#Barro</span>
+            </div>
+        </div>
+
+<!-- Sidebar -->
+<div class="w-full h-full ">
+  <!-- Sidebar -->
+    <div class="w-80 h-full overflow-scroll overflow-x-hidden aside fixed pt-28">
+      
+      <!-- Logo y inicio de informacion -->
+      <img src="/static/gobierno_logo.png">
+      <h1 class=" text-center mr-2 text-red-500 text-3xl font-bold ">Información</h1> <br>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <a href="{{url_for('info')}}">¿Que es la artesania?</a> 
+        </p>
+        <p class=" text-lg ml-1 text-black text-center"> ¿Como promovemos la artesania?</p> 
+        <p class=" text-center text-lg ml-1 text-black"> ¿Cuantos tipos de artesanias existen?</p> <br>
+        <!-- Inicio de artesanos -->
+        <a href="{{url_for('tarjeta')}}" class=" text-right ml-20 text-red-500 text-3xl font-bold ">Artesanos </a>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <br><p class=" text-center text-lg ml-1 text-black">Eustaquia de Garay</p> 
+          <p class=" text-center text-lg ml-1 text-black">Felicita de Rolon</p> 
+          <p class=" text-center text-lg ml-1 text-black">Nidia Gimenez</p> <br>
+          <!-- Inicio de categorias -->
+          <a  class=" text-right ml-20 text-red-500 text-3xl font-bold ">Categorias </a>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <br> <p class=" text-center text-lg ml-1 text-black">Tallado en madera</p> 
+          <p class=" text-center text-lg ml-1 text-black">Arte en barro y arcilla</p> 
+          <p class=" text-center text-lg ml-1 text-black">El arte de las telas</p> 
+          <!-- Inicio de info para ser maestro -->
+          <br><a class=" text-center ml-10 text-red-500 text-2xl font-bold ">¿Queres ser maestro? </a>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <br><p class=" text-center text-lg ml-1 text-black">Información</p> 
+          <p class=" text-center text-lg mr-2 text-black"> 
+            <a href="{{url_for('admin')}}">Registrarse</a> 
+          </p>
+        </p>    
+    </div>
+
+            
+                
+</div>
+<!-- Sidebar ends -->
+
+            <div class="container ml-auto py-4 md:w-4/5 w-11/12 pl-6 pt-36 bg-yellow-100 min-h-screen">
+                <div class="  pl-12 w-full h-full rounded flex flex-wrap gap-1">
+                    <!--Aca va el contenido-->
+                        <!-- tarjeta -->
+                      {% for tarjeta in clases%}
+                        <div class="m-5 max-w-xs rounded overflow-hidden shadow-lg shrink-0 bg-gray-50 ">
+                            <img class="w-full h-[215px] object-cover" src="/static/{{tarjeta.img}}" alt="Sunset in the mountains">
+                            <div class="px-6 py-4">
+                              <div class="font-bold text-xl mb-2">{{tarjeta.titulo}}</div>
+                              <p class="text-gray-700 text-base">
+                                {{tarjeta.desc}}
+                              </p>
+                            </div>
+                            <div class="px-6 pt-4 pb-2">
+                                <a href="{{url_for('guia_principal')}}" class="bg-red-500 py-1 px-3 text-white rounded-full float-right mb-3 -translate-y-4 hover:bg-red-600">Entrar</a>
+                            </div>
+                          </div>
+                      {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

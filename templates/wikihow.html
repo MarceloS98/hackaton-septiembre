@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Piloto maquetacion</title>
+  </head>
+  <body class="font-serif bg-gray-50 overflow-x-hidden">
+    <!-- Navbar starts -->
+    <div class="w-full fixed z-30">
+      <div class="navbar bg-base-100 bg-red-500 flex justify-between px-12">
+        <!-- Logo y language selector -->
+        <div class="flex items-center gap-4">
+          <a href="{{url_for('home')}}" class="font-sans text-3xl text-white font-bold">IPA</a>
+          <select
+            class="bg-red-500 py-1 px-3 text-white rounded-full hover:bg-red-600"
+            name="select"
+          >
+            <option value="value1">Español</option>
+            <option value="value3">Guarani</option>
+            <option value="value3">Ingles</option>
+          </select>
+        </div>
+        <!-- Logo y language selector ends -->
+        <!-- Search bar -->
+        <div class="flex-none gap-2">
+          <div class="form-control">
+            <input
+              type="text"
+              placeholder="Busqueda"
+              class="input input-bordered bg-gray-50"
+            />
+          </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img src="https://placeimg.com/80/80/people" />
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              class="mt-3 p-2 shadow menu menu-compact dropdown-content rounded-box bg-gray-100 w-52"
+            >
+              <li>
+                <a class="justify-between"> Perfil </a>
+              </li>
+              <li><a>Configuración</a></li>
+              <li><a>Cerrar sesión</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Search bar ends -->
+      </div>
+      <div
+        class="bg-white text-red-500 flex py-3 items-center gap-4 px-12 shadow-md"
+      >
+        <span class="font-bold"> Cursos mas buscados: </span>
+        <span
+          class="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-red-500"
+          >#filigrana</span
+        >
+        <span
+          class="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-red-500"
+          >#Ñanduti</span
+        >
+        <span
+          class="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-red-500"
+          >#Barro</span
+        >
+      </div>
+    </div>
+    <!-- Navbar ends -->
+
+    <!-- Sidebar -->
+    <div class="w-full h-full">
+      <div
+        class="w-72 h-full overflow-scroll overflow-x-hidden aside fixed pt-32"
+      >
+        <div>
+          <div class="w-80 h-full overflow-scroll overflow-x-hidden aside fixed pt-28 mr-5"></div>
+          <!-- Logo y inicio de informacion -->
+      <img src="/static/gobierno_logo.png">
+      <h1 class=" text-center mr-2 text-red-500 text-3xl font-bold ">Información</h1> <br>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <a href="{{url_for('info')}}">¿Que es la artesania?</a> 
+        </p>
+        <p class=" text-lg ml-1 text-black text-center"> ¿Como promovemos la artesania?</p> 
+        <p class=" text-center text-lg ml-1 text-black"> ¿Cuantos tipos de artesanias existen?</p> <br>
+        <!-- Inicio de artesanos -->
+        <a href="{{url_for('tarjeta')}}" class=" text-right ml-20 text-red-500 text-3xl font-bold ">Artesanos </a>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <br><p class=" text-center text-lg ml-1 text-black">Eustaquia de Garay</p> 
+          <p class=" text-center text-lg ml-1 text-black">Felicita de Rolon</p> 
+          <p class=" text-center text-lg ml-1 text-black">Nidia Gimenez</p> <br>
+          <!-- Inicio de categorias -->
+          <a href="{{url_for('tarjeta')}}" class=" text-right ml-20 text-red-500 text-3xl font-bold ">Categorias </a>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <br> <p class=" text-center text-lg ml-1 text-black">Tallado en madera</p> 
+          <p class=" text-center text-lg ml-1 text-black">Arte en barro y arcilla</p> 
+          <p class=" text-center text-lg ml-1 text-black">El arte de las telas</p> 
+          <!-- Inicio de info para ser maestro -->
+          <br><a href="{{url_for('tarjeta')}}" class=" text-center ml-5 text-red-500 text-2xl font-bold ">¿Queres ser maestro? </a>
+        <p class=" text-center text-lg mr-2 text-black"> 
+          <br><p class=" text-center text-lg ml-1 text-black">Información</p> 
+          <p class=" text-center text-lg ml-1 text-black">Registrarse</p>  
+        </p>    
+    </div>
+    </div>
+    <!-- Sidebar ends -->
+    <!-- tarjeta -->
+    <div
+      class="container ml-auto py-4 md:w-4/5 w-11/12 pl-6 pt-36 bg-yellow-100 min-h-screen flex justify-center"
+    >
+      <div class="shrink-0 max-w-[1200px]">
+        <!-- tarjeta 1 -->
+
+         <div class="rounded overflow-hidden shadow-lg m-3 w-9/12">
+          <div class="h-[400px] w-full overflow-hidden">
+            <img src="/static/nanduti.jpg">
+            
+          </div>
+
+          <div class="px-12 py-8 bg-yellow-50">
+            <div class=" text-red-500 font-bold font-sans text-xl mb-2 text-[36px]">
+              Elaboracion de Nhanduti de Manera Creativa
+            </div>
+            <p class="text-black font-sans leading-relaxed text-lg">
+              Se corta la tela de lienzo 3cm menos que el tamanho del bastidor, 
+              se hace una bastilla en los bordes, luego de realizar estos pasos fijar 
+              la tela por el bastidor. Para fijar la tela al bastidor, se centra el mismo 
+              atando con el hilo o linha en las 4 esquinas. Despues fijar los laterales dando 
+              punteadas alrededor cada 2 a 3 cm, de modo que quede bien tensada. El hilo que se
+               usa para tensar debe atarse al bastidor al principio y al final del tensado, a continuación 
+               calcar el disenho sobre tela. Seguidamente se carga el hilo para el diseño, para elo se realiza 
+               lo siguiente: Se traza en la tela el diseño (circulo). Se marca el centro y con la aguja enhebrada 
+               se procede al cargado. Haciendo un nudo usando de referencia al sentido del hilo. Luego se procede 
+               a relenar el diseño con el hilo dando puntadas arriba y abajo, dejando un pequeño espacio de 2 a 
+               3 cm entre hilo e hilo, llenar la parte de arriba en sentido de la aguja del reloj y la parte de 
+               abajo al reves del diseño. Una vez rellenado el disenho hacer un nudo en el centro del circulo 
+               pasado la aguja con el hilo por debajo de los hilos cargando de 2 a 3 vueltas mas o menos (esto para 
+               tensar los hilos y que no se muevan) logrando el centro y apyte.
+            </p>
+          </div>
+        </div>
+
+        <br> <div class="rounded overflow-hidden shadow-lg m-3 w-9/12">
+          <div class="h-[400px] w-full overflow-hidden">
+            <img
+              class="w-full"
+              src="/static/nanduti2.jpg"
+            />
+          </div>
+
+          <div class="px-12 py-8 bg-yellow-50">
+            <div class=" text-red-500 font-bold font-sans text-xl mb-2 text-[36px] mb-5">
+              Dechado a puntos o Tejidos Armaje cargado circular
+            </div>
+            <p class="text-black font-sans leading-relaxed text-lg">
+              Con la aguja enhebrada, atravesamos la tela dando puntadas 
+              en el borde superior de esta marca del circulo y atmos los extremos 
+              del hilo en el centro del mismo como se ilustra en la figura 6, esto 
+              para que quede parejo el cargado. Si se prefiere, se puede marcar el 
+              centro para tener una guia. De ahora en mas semantiene este sentido en 
+              el cargado, en una mitad cargamos con sentido hacia la derecha, e la otra 
+              hacia la izquierda, hasta completar todo el circulo. Al hacerlo, los hilos 
+              e el centro van quedando superpuestos, al realizar la ultima lazada se pasa 
+              la aguja por debajo de todos los hilosde la trama, pero sin atravesar la tela 
+              y se lasa el hilo de la aguja formando un nudo, se repite este proceso dos veces 
+              mas para trabar para bien el centro, luego se puede empezar el bordado. Para las formas 
+              cuadradas o rectangulares se trazara en tela un cuadrado con las medidas deseadas(lo mismo 
+              se aplica a medidas triangulares). Se seguiran los mismos pasos pasos de inicio del motivo 
+              circular pero debemos prestar atencion a los vertices para que el trabajo quede prolijo, 
+              en el nudo central, tambien se aplica lo detallado en el cargado circular.
+            </p>
+          </div>
+        </div>
+
+        <!-- tarjeta -->
+
+        <br> <div class="rounded overflow-hidden shadow-lg m-3 w-9/12">
+          <div class="h-[400px] w-full overflow-hidden">
+            <img
+              class="w-full"
+              src="/static/nanduti3.jpg"
+              alt="Sunset in the mountains"
+            />
+          </div>
+
+          <div class="px-12 py-8 bg-yellow-50">
+            <div class="text-red-500 font-bold font-sans text-xl mb-2 text-[36px] mb-5">
+              El Semicirculo
+            </div>
+            <p class="text-black font-sans leading-relaxed text-lg">
+              Este tipo de cargado se utiliza mucho en bordes de manteles o 
+              carpetas, y en prendas como el typo'i, su tamanho puede variar 
+              de acuerdo a la necesidad. Una vez trazado el disenho deseado en
+               el bastidor con la tela tensada, se marca el centro (x). Nuestra aguja 
+               debe siempre salir de X y va hacia la izquierda, donde se da la primera 
+               puntada, luego se ira cargando hasta tener totalizada todo el motivo, depsuesde 
+               cargar se procedera al bordado.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="w-[280px] h-[800px] bg-blue-500 -translate-x-[280px] shrink-0 left-0 -translate-y-[500px] fixed"
+      ></div>
+    </div>
+  </body>
+</html>
